@@ -1,0 +1,9 @@
+{
+  "name": "Love of Food",
+  "short_name": "SharedPlate",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f97316",
+  "theme_color": "#0e7490",
+  "icons": []
+}
