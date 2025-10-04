@@ -1,0 +1,8 @@
+app = "love-of-food-api"
+primary_region = "ams"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8080"

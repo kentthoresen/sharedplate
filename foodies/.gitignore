@@ -1,0 +1,29 @@
+# Node
+node_modules/
+.pnp.cjs
+.pnp.loader.mjs
+.next/
+out/
+
+# Rust
+/target
+Cargo.lock
+
+# Env
+.env
+*.env
+
+# Logs
+logs/
+scripts/logs/*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated docs
+wiki/.cache
+web/.cache
+
+# Docker
+infra/docker/data
