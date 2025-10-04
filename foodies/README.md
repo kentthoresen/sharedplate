@@ -44,3 +44,7 @@ See the `LICENSE` file for full terms and the `apps/web/LICENSE` note for the MI
 ## Status
 
 This repository is under active construction. Refer to the CHANGELOG for high-level progress and planned milestones.
+
+## Architecture Review Summary
+
+An April 2024 audit verified that the backend adheres to the intended layered Axum architecture and that all core services are implemented in Rust. The write-up, including recommended follow-up items, is available in [`docs/ARCHITECTURE_REVIEW.md`](docs/ARCHITECTURE_REVIEW.md).
