@@ -1,0 +1,43 @@
+name: Lint
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Rustfmt
+        working-directory: apps/api
+        run: cargo fmt -- --check
+
+      - name: Clippy
+        working-directory: apps/api
+        run: cargo clippy -- -D warnings
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install deps
+        working-directory: apps/web
+        run: pnpm install --frozen-lockfile
+
+      - name: ESLint
+        working-directory: apps/web
+        run: pnpm run lint
+
+      - name: Typecheck
+        working-directory: apps/web
+        run: pnpm run typecheck
